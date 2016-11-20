@@ -1,0 +1,16 @@
+[{
+    "id": "about",
+    "name": "About"
+}, {
+    "id": "skills",
+    "name": "Skills"
+}, {
+    "id": "work",
+    "name": "Work"
+}, {
+   "id": "clients",
+   "name": "Clients"
+}, {
+    "id": "contact",
+    "name": "Contact"
+}]

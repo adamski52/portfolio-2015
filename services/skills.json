@@ -1,0 +1,62 @@
+{
+    "intro": [{
+        "p": "While I am primarily a front-end web developer, I have worked as a back-end developer and as a graphic designer.  I have fluency in over 10 programming languages, have done print and design work, and also information architecture."
+    }, {
+        "p": "My ability to bring a project from concept to reality has exposed me to a variety of technologies.  Listed here are only the skills and technologies that I use most frequently at the moment."
+    }],
+    "items": [{
+        "id": "html5",
+        "name": "HTML 5"
+    },{
+        "id": "css3",
+        "name": "CSS 3"
+    },{
+        "id": "angular",
+        "name": "AngularJS"
+    },{
+        "id": "backbone",
+        "name": "BackboneJS"
+    },{
+        "id": "node",
+        "name": "Node.js"
+    },{
+        "id": "less",
+        "name": "LESS"
+    },{
+        "id": "jquery",
+        "name": "jQuery"
+    },{
+        "id": "php",
+        "name": "PHP"
+    },{
+        "id": "mysql",
+        "name": "MySQL"
+    },{
+        "id": "apache",
+        "name": "LAMP Stack"
+    },{
+        "id": "cq5",
+        "name": "AEM/CQ5"
+    },{
+        "id": "android",
+        "name": "Android"
+    },{
+        "id": "actionscript",
+        "name": "ActionScript"
+    },{
+        "id": "flash",
+        "name": "Flash"
+    },{
+        "id": "flashbuilder",
+        "name": "FlashBuilder/Flex"
+    },{
+        "id": "photoshop",
+        "name": "PhotoShop"
+    },{
+        "id": "illustrator",
+        "name": "Illustrator"
+    },{
+        "id": "fireworks",
+        "name": "Fireworks"
+    }]
+}

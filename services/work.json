@@ -1,0 +1,148 @@
+[{
+    "url": "http://www.jonathanadamski.com/archive/2013/",
+    "img": "img/projects/jna.jpg",
+    "title": "Portfolio (2013)",
+    "btnText": "View project",
+    "desc": [{
+        "p": "My portfolio from 2013 is an experiment in new techniques at the time such as 3D transformations, parallax movement and CSS3 transitions."
+    }, {
+        "p": "While the site is not responsive (and is not intended to be), it does feature other best practices like Object-Oriented CSS, Sprite sheets, and SEO/Accessibility considerations."
+    }, {
+        "p": "The site you are at presently is designed to be responsive, but not leverage cutting edge (poorly supported) techniques."
+    }]
+}, {
+    "url": "http://www.thebakersformula.com/",
+    "img": "img/projects/baker.jpg",
+    "title": "The Baker's Formula",
+    "btnText": "View project",
+    "desc": [{
+        "p": "A fun website I created by myself for a local bakery.  The structure is HTML5, the styling is CSS3, and the functionality is jQuery."
+    }, {
+        "p": "All design work including the logo are of my own creation.  Several pieces of print work, including stickers, stamps and aprons were created using this artwork."
+    }]
+}, {
+    "modalURL": "//www.youtube.com/embed/ZwudnstPl2Q?rel=0",
+    "url": "http://www.youtube.com/watch?v=ZwudnstPl2Q",
+    "img": "img/projects/gm-apps.jpg",
+    "title": "OnStar Dashboard",
+    "btnText": "Watch video",
+    "desc": [{
+        "p": "I helped create and define the OnStar infotainment prototype, which later became Cadillac CUE and Chevy MyLink."
+    }, {
+        "p": "The prototype allowed for in-car Skype calls, camera sharing, collision cameras, and more."
+    }, {
+        "p": "Watch as the OnStar prototype is shown in this advertisement."
+    }]
+}, {
+    "modalURL": "//www.youtube.com/embed/_uLTg551idI?rel=0",
+    "url": "http://www.youtube.com/watch?v=_uLTg551idI",
+    "img": "img/projects/4g.jpg",
+    "title": "GM/AT&T 4G Connected Vehicle",
+    "btnText": "Watch video",
+    "desc": [{
+        "p": "I helped define and program the API used by GM's infotainment systems."
+    }, {
+        "p": "This API allowed for wireless Internet sharing between the vehicle and a mobile device, and exposed data about the vehicle to any app which desired it, such as GPS, audio policies and even backseat monitors."
+    }, {
+        "p": "Applications shared between the radio and the mobile device could communicate with each other using a protocol I helped create."
+    }, {
+        "p": "Watch as Engadget uses and reviews this technology."
+    }]
+}, {
+    "modalURL": "//www.youtube.com/embed/-e2bCLmHoVQ?rel=0",
+    "url": "http://www.youtube.com/watch?v=-e2bCLmHoVQ",
+    "img": "img/projects/2013mwc.jpg",
+    "title": "GM Vehicle, 2013 - MWC",
+    "btnText": "Watch video",
+    "desc": [{
+        "p": "I helped program the applications running on the GM Connected Vehicle."
+    }, {
+        "p": "This vehicle connected through a mobile device's 4G hotspot.  All of the apps worked off of a JavaScript API that I helped to develop."
+    }, {
+        "p": "Users of this system could pair their mobile device (iOS and Android) with the vehicle and the vehicle would be able to communicate with applications on the mobile device."
+    }, {
+        "p": "Applications shared between the radio and the mobile device could communicate with each other using a protocol I helped create."
+    }, {
+        "p": "Watch as this technology is showcased at CES."
+    }]
+}, {
+    "modalURL": "//www.youtube.com/embed/AeQ473VrBe0?rel=0",
+    "url": "http://www.youtube.com/watch?v=AeQ473VrBe0",
+    "img": "img/projects/sdk.jpg",
+    "title": "GM Developer API",
+    "btnText": "Watch video",
+    "desc": [{
+        "p": "I helped define and program the API used by GM's infotainment systems."
+    }, {
+        "p": "This API allowed for wireless Internet sharing between the vehicle and a mobile device, and exposed data about the vehicle to any app which desired it, such as GPS, audio policies and even backseat monitors."
+    }, {
+        "p": "Applications shared between the radio and the mobile device could communicate with each other using a protocol I helped create."
+    }, {
+        "p": "Watch as the API I helped create is used by developers at Hackathon."
+    }]
+}, {
+    "modalURL": "//www.youtube.com/embed/wLOowXjcZjw?rel=0",
+    "url": "http://www.youtube.com/watch?v=wLOowXjcZjw",
+    "img": "img/projects/mylink.jpg",
+    "title": "Chevy MyLink",
+    "btnText": "Watch video",
+    "desc": [{
+        "p": "I helped create the MyLink in-dash infotainment system available in Chevrolet vehicles."
+    }, {
+        "p": "The API I helped to architect and program enables the MyLink system to perform phone-to-vehicle application sharing, such as Pandora, iHeartRadio, TuneIn Radio, weather, and many more."
+    }, {
+        "p": "Applications shared between the radio and the mobile device could communicate with each other using a protocol I helped create."
+    }, {
+        "p": "Watch as this technology is explained in further detail."
+    }]
+}, {
+    "url": "http://translogic.aolautos.com/2011/01/09/ces-2011-hands-on-with-verizons-4g-lte-equipped-buick-lacrosse/",
+    "img": "img/projects/4g-verizon.jpg",
+    "title": "GM/Verizon 4G LTE Connected Vehicle",
+    "btnText": "Read article",
+    "desc": [{
+        "p": "I helped define and program the API used by GM's infotainment systems."
+    }, {
+        "p": "This API allowed for wireless Internet sharing between the vehicle and a mobile device, and exposed data about the vehicle to any app which desired it, such as GPS, audio policies and even backseat monitors."
+    }, {
+        "p": "Applications shared between the radio and the mobile device could communicate with each other using a protocol I helped create."
+    }, {
+        "p": "Check out the article about this technology at Translogic."
+    }]
+}, {
+    "url": "http://www.autoblog.com/2011/12/21/onstar-bringing-another-4g-lte-concept-to-ces/",
+    "img": "img/projects/onstar-ces.jpg",
+    "title": "OnStar CES vehicle",
+    "btnText": "Read article",
+    "desc": [{
+        "p": "I helped define and program the API used by GM's infotainment systems."
+    }, {
+        "p": "This API allowed for wireless Internet sharing between the vehicle and a mobile device, and exposed data about the vehicle to any app which desired it, such as GPS, audio policies and even backseat monitors."
+    }, {
+        "p": "Applications shared between the radio and the mobile device could communicate with each other using a protocol I helped create."
+    }, {
+        "p": "Check out the article about this technology at Autoblog."
+    }]
+}, {
+    "url": "http://www.jonathanadamski.com/archive/2011/",
+    "img": "img/projects/jna2.jpg",
+    "title": "Porfolio (2011)",
+    "btnText": "View project",
+    "desc": [{
+        "p": "My portfolio from 2011 is not impressive by today's standards.  In just a few short years, the techniques used have become obsolete and fallen out of favor."
+    }, {
+        "p": "However, this site still demonstrates the capacity for learning and the ability to keep up with evolving design and development trends that is vital to a successful web professional."
+    }]
+}, {
+    "url": "http://www.jonathanadamski.com/archive/2009/",
+    "img": "img/projects/jna3.jpg",
+    "title": "Porfolio (2009)",
+    "btnText": "View project",
+    "desc": [{
+        "p": "Yep - a Flash site.  The 2000s were a crazy time; no smart phones to worry about, responsive design didn't even exist, and jQuery was still emerging from a nuisance to a necessity."
+    }, {
+        "p": "It was built right, for the time, though.  The site is developed in ActionScript 3 with no timeline work being performed.  Each view is its own component with proper inheritence and struture, and the pubsub pattern is used to bubble and capture the necessary communications."
+    }, {
+        "p": "While this site is entirely obsolete, I still really enjoy the asthetics of it."
+    }]
+}]

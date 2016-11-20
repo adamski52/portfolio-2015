@@ -1,0 +1,208 @@
+<!doctype html>
+<html data-ng-app="App" id="ng-app">
+    <head>
+        <title>Jonathan Adamski</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!--[if lte IE 9]>
+            <link rel="stylesheet" type="text/css" href="css/ie-lte-9.css">
+        <![endif]-->
+        <!--[if lt IE 9]>
+            <link rel="stylesheet" type="text/css" href="css/ie-lt-9.css">
+            <script src="js/polyfills/respond.js"></script>
+        <![endif]-->
+
+        <!--
+            I know this should be minified and in a single file, but since this is a portfolio site
+            and since you are most likely some kind of recruiter, I thought it was beneficial to let
+            the code remain in a readable state.
+        -->
+
+        <script type="text/javascript" src="js/lib/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+
+        <script type="text/javascript" src="js/factories/positions-factory.js"></script>
+        <script type="text/javascript" src="js/factories/services-factory.js"></script>
+
+        <script type="text/javascript" src="js/directives/contact-form-directive.js"></script>
+        <script type="text/javascript" src="js/directives/divider-directive.js"></script>
+        <script type="text/javascript" src="js/directives/modal-close-directive.js"></script>
+        <script type="text/javascript" src="js/directives/nav-directive.js"></script>
+        <script type="text/javascript" src="js/directives/nav-dropdown-directive.js"></script>
+        <script type="text/javascript" src="js/directives/nav-item-directive.js"></script>
+        <script type="text/javascript" src="js/directives/nav-menu-directive.js"></script>
+        <script type="text/javascript" src="js/directives/next-array-directive.js"></script>
+        <script type="text/javascript" src="js/directives/next-directive.js"></script>
+        <script type="text/javascript" src="js/directives/prev-array-directive.js"></script>
+        <script type="text/javascript" src="js/directives/prev-directive.js"></script>
+        <script type="text/javascript" src="js/directives/section-directive.js"></script>
+        <script type="text/javascript" src="js/directives/setter-directive.js"></script>
+        <script type="text/javascript" src="js/directives/work-item-directive.js"></script>
+
+        <script type="text/javascript" src="js/controllers/about-controller.js"></script>
+        <script type="text/javascript" src="js/controllers/clients-controller.js"></script>
+        <script type="text/javascript" src="js/controllers/nav-controller.js"></script>
+        <script type="text/javascript" src="js/controllers/skills-controller.js"></script>
+        <script type="text/javascript" src="js/controllers/work-controller.js"></script>
+
+    </head>
+    <body>
+        <noscript>
+            <div class="noscript">
+                <p>Hello.  Thank you for visiting.  It looks like you have JavaScript disabled.</p>
+                <p>I am primarily a front-end web developer, and it makes sense for my portfolio/demonstration site to utilize JavaScript heavily.</p>
+                <p>While I understand the benefits of progressive enhancement and graceful degradation with JavaScript, you are among a very small percentage of users (less than 2% by some estimates) who have JavaScript disabled. The percentage of users with JavaScript disabled is even less among my target audience, such as recruiters and employers.</p>
+                <p>There is nothing nefarious on this site - I am just better served as an asset and as a candidate for employment when I am able to show what I can do than I am when I am only able to show what I can do without.</p>
+                <p>Please enable JavaScript to continue.</p>
+            </div>
+        </noscript>
+        <div id="wrapper" data-ng-style="{'display': 'block'}">
+
+            <div id="nav" class="nav hello-developers-this-fixes-a-chrome-bug" data-nav data-ng-controller="navCtrl">
+                <a href="" data-nav-menu class="menu">Menu</a>
+                <a data-ng-repeat="item in collection" data-nav-item="{{item.id}}" data-ng-class="{'active': isActive(item.id)}" class="nav-item {{item.id}}" href="#{{item.id}}">{{item.name}}</a>
+            </div>
+
+            <div id="about" data-section="about" data-ng-controller="aboutCtrl">
+                <a href="" class="arrow prev" data-prev>Prev</a>
+                
+                <h1>Jonathan Adamski</h1>
+                <p data-ng-repeat="fact in collection" data-ng-animate="'animate'" data-ng-if="isCurrent($index)">{{fact.text}}</p>
+
+                <a href="" class="arrow next" data-next>Next</a>
+                <div class="nav">
+                    <a href="" class="setter" data-ng-class="{'active': isCurrent($index)}" data-ng-repeat="item in collection" data-setter="{{$index}}">{{$index+1}}</a>
+                </div>
+
+                <div id="gemini" ></div>
+                <div id="orion"></div>
+            </div>
+
+            <div class="divider spacer" id="about-divider" data-divider>
+                <div id="rocketship"></div>
+            </div>
+
+            <div id="skills" data-section="skills" data-divider class="divider spacer" data-ng-controller="skillsCtrl">
+                <div id="skills-divider">
+                    <div class="cloud cloud1"></div>
+                    <div class="cloud cloud2"></div>
+                    <div class="cloud cloud3"></div>
+                    <div class="cloud cloud4"></div>
+                </div>
+
+                <a href="" data-prev-array class="arrow prev">Prev</a>
+
+                <div id="skills-inner">
+                    <div data-ng-repeat="skill in collection" class="skill">
+                        <i class="icon {{skill.id}}"></i>
+                        <p>{{skill.name}}</p>
+                    </div>
+                </div>
+
+                <div class="intro">
+                    <p data-ng-repeat="text in intro">{{text.p}}</p>
+                </div>
+
+                <a href="" data-next-array class="arrow next">Next</a>
+            </div>
+
+            <div id="work" data-section="work" data-ng-controller="workCtrl">
+                <div class="filler">
+                    <a href="" class="arrow prev" data-prev>Prev</a>
+
+                    <div class="inner">
+                        <select class="optional-nav" data-nav-dropdown>
+                            <option data-ng-repeat="job in collection" value="{{$index}}">{{job.title}}</option>
+                        </select>
+                    
+                        <div data-ng-repeat="job in collection" data-ng-show="isCurrent($index)">
+                            <div class="img">
+                                <a href="" data-work-item="{{$index}}"><img src="img/loading.gif" alt="{{job.title}}" data-ng-src="{{job.img}}"></a>
+                                <a href="" data-work-item="{{$index}}" class="btn">{{job.btnText}}</a>
+                            </div>
+                            <div class="desc">
+                                <p class="title">{{job.title}}</p>
+                                <p data-ng-repeat="text in job.desc">{{text.p}}</p>
+                                <a href="" data-work-item="{{$index}}" class="btn">{{job.btnText}}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="" class="arrow next" data-next>Next</a>
+                    <div class="nav">
+                        <a href="#work" class="setter" data-ng-class="{'active': isCurrent($index)}" data-ng-repeat="job in collection" data-setter="{{$index}}">{{job.title}}</a>
+                    </div>
+                    <div class="tooltip">{{tooltip}}</div>
+                </div>
+
+                <div class="modal" data-ng-if="isModalOpen()">
+                    <iframe data-ng-src="{{getModalURL()}}" allowfullscreen></iframe>
+                    <a href="" data-modal-close class="btn">close</a>
+                </div>
+            </div>
+
+            <div id="clients" data-section="clients" data-ng-controller="clientsCtrl">
+                <div id="clients-content">
+                    <div class="content">
+                        <div data-ng-repeat="year in collection" class="year-{{year.year}}">
+                            <div class="bg-text">{{year.year}}</div>
+                            <div data-ng-repeat="client in year.items" class="client" id="{{client.id}}">
+                                <div class="icon">{{client.name}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider" id="clients-divider">
+                <div id="clients-divider-inner"></div>
+            </div>
+
+            <div id="contact" data-divider class="divider" data-ng-class="{'error': hasError}" data-section="contact">
+                <div class="divider" id="contact-divider">
+                    <div class="door door1"><div class="cerebro"></div></div>
+                    <div class="door door2"><div class="cerebro"></div></div>
+                </div>
+                <div id="contact-inner">
+                    <form novalidate data-contact-form>
+                        <div data-ng-if="!postSuccess">
+                            <div class="form-inline" data-ng-class="{'error': hasNameError}">
+                                <label for="your-name">Your name</label>
+                                <input type="text" data-ng-model="msg.name" id="your-name">
+                            </div>
+                            <div class="form-inline" data-ng-class="{'error': hasEmailError}">
+                                <label for="your-email">Your email</label>
+                                <input type="email" data-ng-model="msg.email" id="your-email">
+                            </div>
+                            <div class="form-item" data-ng-class="{'error': hasMessageError}">
+                                <label for="your-message">Your message</label>
+                                <textarea id="your-message" data-ng-model="msg.message"></textarea>
+                            </div>
+                            <div class="form-item">
+                                <input type="submit" class="btn" value="Submit">
+                                <p data-ng-if="postFail" class="error">Oh no - something went wrong.  Try again!</p>
+                            </div>
+                        </div>
+                        <div class="thanks" data-ng-if="postSuccess">
+                            <p>Thanks - I appreciate your interest!</p>
+                            <a class="btn" href="" data-ng-click="reset()">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-46455521-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+    </body>
+</html>

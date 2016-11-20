@@ -1,0 +1,1100 @@
+@font-face {
+    font-family: forever-font;
+    src: url('../fonts/alwaysforever-webfont.eot');
+    src: url('../fonts/alwaysforever-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/alwaysforever-webfont.woff') format('woff'),
+         url('../fonts/alwaysforever-webfont.ttf') format('truetype'),
+         url('../fonts/alwaysforever-webfont.svg#always__foreverregular') format('svg');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: chocolate-font;
+    src: url('../fonts/chocolatecoveredraindrops-webfont.eot');
+    src: url('../fonts/chocolatecoveredraindrops-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/chocolatecoveredraindrops-webfont.woff') format('woff'),
+         url('../fonts/chocolatecoveredraindrops-webfont.ttf') format('truetype'),
+         url('../fonts/chocolatecoveredraindrops-webfont.svg#always__foreverregular') format('svg');
+    font-weight: normal;
+}
+
+@error-text: #f00;
+@heading-color: #bae1f8;
+@about-background: #000000;
+@skills-background: #003d60;
+@work-background: #00aec8;
+@clients-background: #4d2704;
+@contact-door-start-background: #02333c;
+@contact-door-end-background: #011b20;
+@contact-error-background: #2f0606;
+@contact-start-background: #001219;
+@contact-end-background: #000;
+@btn-start: #015c90;
+@btn-end: #003d60;
+@about-border: #d79239;
+@skills-border: #0896e5;
+@work-border: #d4ca27;
+@clients-border: #45b30f;
+@contact-border: #ff51f9;
+
+html, body {
+    background: @contact-start-background;
+    color: #fff;
+    font-family: chocolate-font, Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a, input, textarea {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+#wrapper {
+    display: none;
+}
+
+.noscript {
+    max-width: 300px;
+    margin: 0 auto;
+    padding-top: 340px;
+    margin-top: 20px;
+    background: url(../img/cerebro-door-small.png) top center no-repeat;
+    font-family: chocolate-font;
+    font-size: 1.3em;
+
+    p {
+        margin-bottom: .7em;
+    }
+}
+
+.nav {
+    text-align: center;
+}
+
+
+#nav {
+    font-family: forever-font;
+    margin: 0 auto;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    z-index: 9999;
+    font-size: 1.5em;
+    border-bottom: 2px solid #000;
+    top: 0;
+    width: 100%;
+    text-align: center;
+
+    a {
+        padding: .4em;
+        text-decoration: none;
+        text-transform: lowercase;
+        color: #fff;
+        display: inline-block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .nav-item {
+        position: relative;
+        top: 2px;
+    }
+
+    .about {
+        color: @about-border;
+        border-bottom: 2px solid @about-border;
+    }
+
+    .skills {
+        color: @skills-border;
+        border-bottom: 2px solid @skills-border;
+    }
+
+    .work {
+        color: @work-border;
+        border-bottom: 2px solid @work-border;
+    }
+
+    .clients {
+        color: @clients-border;
+        border-bottom: 2px solid @clients-border;
+    }
+
+    .contact {
+        color: @contact-border;
+        border-bottom: 2px solid @contact-border;
+    }
+
+    .active {
+        border-bottom-width: 4px;
+        border-bottom-style: double;
+        text-decoration: line-through;
+    }
+
+    &.hello-developers-this-fixes-a-chrome-bug {
+        -webkit-transform: translateZ(0); /* hello, CSS developers.  you're wondering why this is here?  there's a chrome bug with position fixed and anchor jumps.  this forces a re-paint.  comment it out and click the nav links a few times and watch the header disappear! */
+    }
+}
+
+.inner {
+    margin: 0 75px;
+}
+
+.optional-nav {
+    width: 100%;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 99;
+    background: url(../img/arrows-sprite.png) no-repeat transparent;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    margin-top: -25px;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.prev {
+    background-position: 0 0;
+    left: 0;
+}
+
+.next {
+    background-position: -100px 0;
+    right: 0;
+}
+
+.setter {
+    position: relative;
+    display: inline-block;
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    font-size: 0;
+    background: rgba(255,255,255,.5);
+    margin: 0 1px;
+
+    &.active {
+        background: #fff;
+     }
+}
+
+.tooltip {
+    text-align: center;
+    color: #015c90;
+    min-height: 1em;
+}
+
+.btn {
+    padding: 5px 0;
+    .divider-gradient(@btn-start, @btn-end);
+    width: 100%;
+    font-size: 1em;
+    border: none;
+    font-family: chocolate-font;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 20px;
+    color: #fff;
+
+    &:hover {
+        .divider-gradient(@btn-end, @btn-start);
+    }
+}
+
+section {
+    position: relative;
+}
+
+#about {
+    padding-top: 200px;
+    background: @about-background;
+    color: #fff;
+    text-align: center;
+
+    .arrow {
+        top: 250px;
+    }
+
+    h1 {
+        font-family: forever-font;
+        font-weight: normal;
+        width: 100%;
+        font-size: 4em;
+        text-transform: lowercase;
+        color: @heading-color;
+    }
+
+    p {
+        font-size: 1.5em;
+        max-width: 500px;
+        margin: -20px auto 20px auto;
+        line-height: .7em;
+        min-height: 3em;
+    }
+
+    #gemini {
+        background: url(../img/space-sprite.png) no-repeat;
+        width: 215px;
+        height: 175px;
+        position: absolute;
+        left: 100px;
+        top: 189px;
+    }
+
+    #orion {
+        background: url(../img/space-sprite.png) no-repeat -691px -63px;
+        height: 50px;
+        width: 20px;
+        position: absolute;
+        right: 200px;
+        top: 233px;
+    }
+}
+
+.divider-gradient (@start: #000000, @end: #000000) {
+    overflow: hidden;
+    background: @start;
+    background: -moz-linear-gradient(top, @start 0%, @end 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@end));
+    background: -webkit-linear-gradient(top, @start 0%,@end 100%);
+    background: -o-linear-gradient(top, @start 0%,@end 100%);
+    background: -ms-linear-gradient(top, @start 0%,@end 100%);
+    background: linear-gradient(to bottom, @start 0%,@end 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@start, endColorstr=@end,GradientType=0 );
+}
+
+
+.spacer {
+    min-height: 500px;
+}
+
+.divider {
+    position: relative;
+
+    #rocketship {
+        transition: left 5s linear;
+        -webkit-transition: left 5s linear;
+        background: url(../img/space-sprite.png) no-repeat -230px 0;
+        width: 458px;
+        height: 175px;
+        position: absolute;
+        top: 50%;
+        margin-top: -87px;
+        margin-left: 229px;
+        left: -687px;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+
+    .cloud {
+        background: url(../img/clouds-sprite.png) no-repeat;
+        height: 485px;
+        position: absolute;
+        top: 50%;
+        margin-top: -243px;
+        transition: all 5s linear;
+        -webkit-transition: all 5s linear;
+
+        &.cloud1 {
+            width: 702px;
+            left: 0%;
+        }
+
+        &.cloud2 {
+            width: 682px;
+            background-position: -702px 0;
+            left: 15%;
+        }
+
+        &.cloud3 {
+            width: 732px;
+            background-position: -1384px 0;
+            right: 15%;
+        }
+
+        &.cloud4 {
+            width: 738px;
+            background-position: -2118px 0;
+            right: 0%;
+        }
+    }
+
+    .door {
+        width: 50%;
+        height: 730px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        background: @contact-door-end-background;
+        transition: all 2s ease-in;
+        -webkit-transition: all 2s ease-in;
+
+        .cerebro {
+            height: 730px;
+            width: 297px;
+            position: absolute;
+            background: url(../img/cerebro-door.png) no-repeat center center;
+        }
+
+        &.door4 {
+            background: @contact-door-end-background;
+            background: -moz-linear-gradient(left, @contact-door-end-background 0%, @contact-door-start-background 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,@contact-door-end-background), color-stop(100%,@contact-door-start-background));
+            background: -webkit-linear-gradient(left, @contact-door-end-background 0%,@contact-door-start-background 100%);
+            background: -o-linear-gradient(left, @contact-door-end-background 0%,@contact-door-start-background 100%);
+            background: -ms-linear-gradient(left, @contact-door-end-background 0%,@contact-door-start-background 100%);
+            background: linear-gradient(to right, @contact-door-end-background 0%,@contact-door-start-background 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@contact-door-end-background, endColorstr=@contact-door-start-background,GradientType=1 );
+        }
+
+        &.door1 {
+            background: @contact-door-start-background;
+            background: -moz-linear-gradient(left, @contact-door-start-background 0%, @contact-door-end-background 100%);
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%,@contact-door-start-background), color-stop(100%,@contact-door-end-background));
+            background: -webkit-linear-gradient(left, @contact-door-start-background 0%,@contact-door-end-background 100%);
+            background: -o-linear-gradient(left, @contact-door-start-background 0%,@contact-door-end-background 100%);
+            background: -ms-linear-gradient(left, @contact-door-start-background 0%,@contact-door-end-background 100%);
+            background: linear-gradient(to right, @contact-door-start-background 0%,@contact-door-end-background 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@contact-door-start-background, endColorstr=@contact-door-end-background,GradientType=1 );
+        }
+
+        &.door1 {
+            left: 0;
+
+            .cerebro {
+                right: 0;
+                background-position: left center;
+            }
+        }
+
+        &.door2 {
+            right: 0%;
+
+            .cerebro {
+                left: 0;
+                background-position: right center;
+            }
+        }
+    }
+
+    &.play {
+        #rocketship {
+            left: 100%;
+            -moz-transform: scaleX(1);
+            -o-transform: scaleX(1);
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+        }
+
+        .cloud {
+            &.cloud1,
+            &.cloud2 {
+                left: -800px;
+                opacity: 0;
+            }
+
+            &.cloud1,
+            &.cloud4 {
+                transition: all 2s linear;
+                -webkit-transition: all 2s linear;
+            }
+
+            &.cloud2,
+            &.cloud3 {
+                transition: all 5s linear;
+                -webkit-transition: all 5s linear;
+            }
+
+            &.cloud3,
+            &.cloud4 {
+                right: -800px;
+                opacity: 0;
+            }
+        }
+
+        .door {
+            transition: all 3s ease-in;
+            -webkit-transition: all 3s ease-in;
+
+            &.door1 {
+                left: -50%;
+            }
+
+            &.door2 {
+                right: -50%;
+            }
+        }
+    }
+}
+
+#about-divider {
+    .divider-gradient(@about-background, @skills-background);
+}
+
+#skills {
+    background: @skills-background;
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 150px;
+    min-height: 0;
+
+    .intro {
+        width: 75%;
+        text-align: left;
+        margin: 0 auto;
+
+        p {
+            margin-top: 20px;
+            padding: 0 50px;
+        }
+    }
+
+    .arrow {
+        top: 260px;
+    }
+
+    #skills-inner {
+        width: 75%;
+        text-align: center;
+        margin: 0 auto;
+        overflow: hidden;
+        height: 150px;
+    }
+
+    .skill {
+        font-size: 1.5em;
+        margin-bottom: 1.5em;
+        width: 180px;
+        display: inline-block;
+        text-align: center;
+        text-indent: -12px;
+
+        .icon {
+            display: block;
+            margin: 0 auto;
+            background: url(../img/skills-sprite.png) no-repeat 0 2px;
+            width: 96px;
+            height: 100px;
+
+            &.html5 {
+                background-position: 0 -700px;
+            }
+
+            &.css3 {
+                background-position: 0 -800px;
+            }
+
+            &.angular {
+                background-position: 0 -300px;
+            }
+
+            &.backbone {
+                background-position: 0 -1400px;
+            }
+
+            &.node {
+                background-position: 0 -500px;
+            }
+
+            &.less {
+                background-position: 0 -1600px;
+            }
+
+            &.jquery {
+                background-position: 0 -1700px;
+            }
+
+            &.mysql {
+                background-position: 0 -1500px;
+            }
+
+            &.apache {
+                background-position: 0 -400px;
+            }
+
+            &.cq5 {
+                background-position: 0 -100px;
+            }
+
+            &.android {
+                background-position: 0 -200px;
+            }
+
+            &.actionscript {
+                background-position: 0 -600px;
+            }
+
+            &.flash {
+                background-position: 0 -900px;
+            }
+
+            &.flashbuilder {
+                background-position: 0 -1000px;
+            }
+
+            &.photoshop {
+                background-position: 0 -1100px;
+            }
+
+            &.illustrator {
+                background-position: 0 -1200px;
+            }
+
+            &.fireworks {
+                background-position: 0 -1300px;
+            }            
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+#skills-divider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 500px;
+}
+
+#work {
+    .divider-gradient(@skills-background, @work-background);
+    padding-top: 200px;
+    position: relative;
+
+    .filler {
+        background: url(../img/sun.png) no-repeat bottom center;
+        min-height: 465px;
+        width: 100%;
+        padding-bottom: 100px;
+    }
+
+    .arrow {
+        top: 240px;
+    }
+
+    .img {
+        display: inline-block;
+        width: 33%;
+        vertical-align: top;
+
+        img {
+            width: 100%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border: 7px solid rgba(255, 255, 255, .5);
+        }
+    }
+
+    .desc {
+        display: inline-block;
+        padding-bottom: 20px;
+        vertical-align: top;
+        width: 57%;
+        margin-left: 5%;
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .title {
+            margin: 0;
+            font-size: 2em;
+            font-family: forever-font;
+            color: @heading-color;
+        }
+
+        .btn {
+            display: none;
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.9);
+    text-align: center;
+    padding-top: 50px;
+    z-index: 9999;
+
+    iframe {
+        border: none;
+        display: block;
+        width: 560px;
+        height: 315px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        width: 560px;
+        margin-top: 20px;
+    }
+}
+
+#clients {
+    margin-top: -100px;
+    padding-top: 100px;
+    position: relative;
+    z-index: 999;
+
+    #clients-content {
+        background: url(../img/bg-grass.png) repeat-x top center @clients-background;
+        padding-top: 30px;
+    }
+
+    .content {
+        background: url(../img/bg-soil.jpg); 
+        width: 100%;
+        text-align: center;
+    }
+
+    .bg-text {
+        font-size: 2em;
+        opacity: .1;
+        width: 100%;
+     }
+
+    .client {
+        -webkit-box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,1);
+        -moz-box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,1);
+        box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,1);
+        line-height: 0;
+        background: rgba(0,0,0,.2);
+        border: 5px double #482302;
+        padding: 20px;
+        border-radius: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 20px;
+        z-index: 999;
+
+        .icon {
+            background: url(../img/clients-sprite.png) no-repeat;
+            text-indent: -9999px;
+            overflow: hidden;
+            //position: absolute;
+            display: inline-block;
+            //top: 50%;
+            //left: 50%;
+        }
+    }
+
+    .icon-spacer (@w: 1px, @h: 1px, @x: 0, @y: 0) {
+        //width: @w+40;
+        //height: @w+40;
+        //border-radius: @w;
+
+        .icon {
+            width: @w;
+            height: @h;
+            //margin-top: -(@h/2);
+            //margin-left: -(@w/2);
+            background-position: @x @y;
+        }
+    }
+
+    .year-2012 {
+        border-top: 2px dashed rgba(0,0,0,.1);
+        background: rgba(0,0,0,.1);
+    }
+
+    .year-2010 {
+        border-top: 2px dashed rgba(0,0,0,.2);
+        background: rgba(0,0,0,.2);
+    }
+
+    .year-2008 {
+        border-top: 2px dashed rgba(0,0,0,.3);
+        background: rgba(0,0,0,.3);
+    }
+
+    .year-2007 {
+        border-top: 2px dashed rgba(0,0,0,.4);
+        background: rgba(0,0,0,.4);
+    }
+
+    .year-2006 {
+        border-top: 2px dashed rgba(0,0,0,.5);
+        background: rgba(0,0,0,.5);
+    }
+
+
+    #axeda {
+        .icon-spacer(163px, 51px);
+    }
+
+    #ford {
+        .icon-spacer(203px, 69px, -162px);
+    }
+
+    #jeep {
+        .icon-spacer(118px, 54px, -370px);
+    }
+
+    #dodge {
+        .icon-spacer(172px, 27px, -492px);
+    }
+
+    #raytheon {
+        .icon-spacer(185px, 37px, -663px);
+    }
+
+    #twenty20 {
+        .icon-spacer(159px, 50px, -852px);
+    }
+
+    #scion {
+        .icon-spacer(128px, 89px, -1014px);
+    }
+
+    #bcbsm {
+        .icon-spacer(150px, 89px, 0px, -47px);
+    }
+
+    #chrysler {
+        .icon-spacer(230px, 31px, -262px, -72px);
+    }
+
+    #onstar {
+        .icon-spacer(150px, 71px, -596px, -37px);
+    }
+
+    #persis {
+        .icon-spacer(213px, 55px, -748px, -49px);
+    }
+
+    #mediag {
+        .icon-spacer(81px, 49px, -1041px, -87px);
+    }
+
+    #vw {
+        .icon-spacer(63px, 63px, -958px, -72px);
+    }
+
+    #bq {
+        .icon-spacer(103px, 78px, -155px, -69px);
+    }
+
+    #uhc {
+        .icon-spacer(219px, 45px, -1148px);
+    }
+
+    #ikea {
+        .icon-spacer(164px, 40px, -1145px, -59px);
+    }
+
+    #gm {
+        .icon-spacer(76px, 73px, -1316px, -55px);
+    }
+}
+
+#clients-divider {
+    height: 50px;
+    z-index: 999;
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(0,0,0,0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(1%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,0) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,0) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 1%,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 );
+
+    #clients-divider-inner {
+        background: url(../img/bg-clients-divider.png) repeat-x top center;
+        height: 10px;
+    }
+}
+
+.radial-gradient(@inner: #000, @outer: #fff) {
+    background: @inner;
+    background: -moz-radial-gradient(center, ellipse cover, @inner 0%, @outer 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,@inner), color-stop(100%,@outer));
+    background: -webkit-radial-gradient(center, ellipse cover, @inner 0%,@outer 100%);
+    background: -o-radial-gradient(center, ellipse cover, @inner 0%,@outer 100%);
+    background: -ms-radial-gradient(center, ellipse cover, @inner 0%,@outer 100%);
+    background: radial-gradient(ellipse at center, @inner 0%,@outer 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@inner, endColorstr=@outer,GradientType=1 );
+}
+
+#contact {
+    overflow: hidden;
+    color: #fff;
+    font-size: 1.3em;
+    margin-top: -50px;
+    height: 730px;
+    width: 100%;
+    .radial-gradient(@contact-start-background, @contact-end-background);
+
+    &.error {
+        .radial-gradient(@contact-error-background, @contact-end-background);
+    }
+
+    #contact-inner {
+        height: 349px;
+        width: 700px;
+        margin: 0 auto;
+        padding-bottom: 351px;
+        padding-top: 30px;
+        background: url(../img/cerebro.png) bottom center no-repeat;
+
+        p {
+            text-align: center;
+        }
+
+        .thanks {
+            padding: 100px 20%;
+
+            p {
+                margin-bottom: .5em;
+            }
+        }
+
+        .error {
+            color: @error-text;
+        }
+
+        .form-inline,
+        .form-item {
+            &.error {
+                input,
+                textarea,
+                label {
+                    color: @error-text;
+                }
+            }
+        }
+
+        .form-inline {
+            width: 47%;
+            margin: 0 1%;
+            display: inline-block;
+
+            label,
+            input {
+                display: block;
+                width: 100%;
+                font-family: chocolate-font;
+                font-size: 1em;
+                color: #fff;
+            }
+
+            input {
+                background: #000;
+                border: 1px solid #212121;
+                outline: none;
+                height: 1em;
+            }
+        }
+
+        .form-item {
+            width: 97.5%;
+            margin: 20px 1%;
+
+            label,
+            textarea {
+                display: block;
+                width: 100%;
+                padding: 5px;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                font-family: chocolate-font;
+                font-size: 1em;
+                color: #fff;
+            }
+
+            textarea {
+                background: #000;
+                border: 1px solid #212121;
+                outline: none;
+                height: 2em;
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    #gemini,
+    #orion {
+        display: none;
+    }
+
+    .optional-nav {
+        display: block;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .setter {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+    }
+
+    .tooltip {
+        display: none;
+    }
+
+    #work {
+        .img {
+            width: 100%;
+            display: block;
+            text-align: center;
+
+            .btn {
+                display: none;
+            }
+        }
+
+        .desc {
+            width: 100%;
+            margin: 0;
+            display: block;
+
+            .title {
+                font-size: 1.3em;
+                margin: .5em 0;
+                text-align: center;
+            }
+
+            .btn {
+                display: block;
+            }
+        }
+    }
+
+    #skills {
+        .intro {
+            width: 100%;
+        }
+
+        #skills-inner {
+            height: auto;
+            width: 100%;
+            overflow: visible;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    #contact {
+        #contact-inner {
+            width: 100%;
+            background: url(../img/cerebro-small.png) bottom center no-repeat;
+
+            .form-item,
+            .form-inline {
+                width: 95%;
+                margin: 20px auto;
+                display: block;
+            }
+
+            .btn {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    #about {
+        h1 {
+            font-size: 3em;
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .inner {
+        margin: 0 20px;
+    }
+
+    #nav {
+        background: transparent;
+        border: none;
+
+        .menu {
+            background: #000;
+            display: block;
+            border-bottom: 1px solid #333;
+            margin-bottom: -3px;
+        }
+
+        .nav-item {
+            background: #000;
+            display: none;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 13px 0 0 0;
+            border-left: 1px solid #333;
+            border-right: 1px solid #333;
+        }
+
+        .active {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        }
+
+        &.open {
+            .nav-item {
+                display: inline-block;
+                padding: 5px 0;
+            }
+        }
+    }
+
+    #skills {
+        .intro {
+            p {
+                text-align: justify;
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    #about {
+        h1 {
+            line-height: 1.5em;
+            font-size: 2em;
+        }
+    }
+
+    #work {
+        p {
+            text-align: justify;
+        }
+    }
+
+    #clients {
+        .client {
+            margin: 20px 5px;
+        }
+    }
+}
